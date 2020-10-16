@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz-APP</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <button id="start" class="start-btn" onclick="start()">Start Quiz</button>
+    <div id="quizContainer" class="container">
+      <div class="title">Quiz APP</div>
+      <div id="question" class="question"></div>
+      <label class="option"
+        ><input type="radio" name="option" value="1" /><span id="opt1"></span
+      ></label>
+      <label class="option"
+        ><input type="radio" name="option" value="2" /><span id="opt2"></span
+      ></label>
+      <label class="option"
+        ><input type="radio" name="option" value="3" /><span id="opt3"></span
+      ></label>
+      <label class="option"
+        ><input type="radio" name="option" value="4" /><span id="opt4"></span
+      ></label>
+      <button id="nextButton" class="next-btn" onclick="loadNextQuestion()">
+        Next Question
+      </button>
+    </div>
+    <div id="result" class="container result" style="display: none"></div>
+
+    <script src="question.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
