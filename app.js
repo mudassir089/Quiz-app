@@ -14,13 +14,44 @@ var opt4 = document.getElementById("opt4");
 var nextButton = document.getElementById("nextButton");
 var resultCont = document.getElementById("result");
 
+var minHeading = document.getElementById("min");
+var secHeading = document.getElementById("sec");
+var min = 0;
+var sec = 0;
+var interval = null;
+// set timer function using if else
+function updateTimer() {
+  sec++;
+  if (sec >= 59) {
+    min++;
+    sec = 0;
+  }
+  if (sec < 10) {
+    secHeading.innerHTML = ": " + "0" + sec;
+  } else {
+    secHeading.innerHTML = ": " + sec;
+  }
+  if (min < 10) {
+    minHeading.innerHTML = "0" + min;
+  } else {
+    minHeading.innerHTML = min;
+  }
+  if (min > 1) {
+    container.style.display = "none";
+    resultCont.style.display = "";
+    resultCont.textContent = "Your Score: " + score + "/" + totQuestions * 10;
+  }
+}
+
 // display none container
 container.style.display = "none";
 
-//Set Start button
+//Set Start button and run timer
 function start() {
   container.style.display = "";
   startBtn.style.display = "none";
+  clearInterval(interval);
+  interval = setInterval(updateTimer, 1000);
 }
 
 //Set Quiz app using 'loadQuestion' function
