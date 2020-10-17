@@ -87,3 +87,10 @@ body {
   background: rgb(70, 6, 35);
   border-radius: 20px;
 }
+.timer {
+  display: inline-block;
+  color: rgb(23, 122, 23);
+  font-family: sans-serif;
+  font-size: 30px;
+  margin-top: 50px;
+}
